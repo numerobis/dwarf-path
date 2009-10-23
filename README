@@ -1,0 +1,21 @@
+Organization:
+- main.cpp runs everything.  It loads up a file (such as test-input),
+  and runs 500 random paths, then reports totally phony statistics based on
+  how many times each grid square was looked at.
+
+- astar.h contains the prototype A* implementation.  It's terribly slow
+  since I use vectors instead of a fib heap for the fringe and either a
+  hash table or a flag for the visited list.  Still, it shows how you'd
+  write a generic path finding routine: it is a template class that takes
+  in a graph (see graph.h) and a heuristic (see heuristic.h)
+
+- heuristics.h shows how to write a heuristic for A*
+
+- graph.h has two types of graph: ones based on a grid, or ones based on
+  an adjacency list.  There's also a dummy at the top that shows roughly
+  what interface a path finding routine should expect.
+
+- grid.h stores the grid.
+- point.h is a 3d int point; an index in the grid, basically
+
+- read.{h,cpp} reads the input and puts it into a grid
